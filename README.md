@@ -6,7 +6,7 @@
 
 ---
 
-This app was made by using languages such as HTML and CSS.
+This website was made by using languages such as HTML and CSS.
 
 ---
 
