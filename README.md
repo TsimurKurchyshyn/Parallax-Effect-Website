@@ -2,7 +2,7 @@
 
 ---
 
-### To use the website, click [here](https://tsimurkurchyshyn.github.io/URUS-Project/)
+### To use the website, click [here](https://tsimurkurchyshyn.github.io/Parallax-Effect-Website/)
 
 ---
 
