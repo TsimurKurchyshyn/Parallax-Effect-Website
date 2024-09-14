@@ -40,9 +40,7 @@ body{
     gap: 60px;
 }
 
-.top{
-    height: 500vh;
-}
+
 
 .top__layer{
     width: 100vw;
@@ -52,15 +50,25 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    animation-timing-function: linear;
-    animation-timeline: scroll();
-    animation-fill-mode: both;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    animation-range: 0 500vh;
+
 }
+
+@supports (animation-timeline: scroll()){
+    .top{
+    height: 500vh;
+    }
+    .top__layer{
+        animation-timing-function: linear;
+        animation-timeline: scroll();
+        animation-fill-mode: both;
+        animation-range: 0 500vh;
+    }
+}
+
 .top__layer--5{
     animation-name: top-layer-5;
 }
@@ -129,6 +137,8 @@ body{
     animation-range: 150vh 350vh;
 }
 
+
+
 .title{
     text-transform: uppercase;
     font-size: 80px;
@@ -137,4 +147,58 @@ body{
 
 .text{
     font-size: 24px;
+}
+
+.arrows-box{
+    border: 1px solid #fff;
+    background-color: rgba(30, 30, 30, .7);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+
+.arrows{
+    width: 10px;
+    height: 10px;
+    position: relative;
+    margin: 23px auto 0;
+}
+
+.arrows::after,
+.arrows::before{
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    width: 100%;
+    height: 100%;
+    animation: arrow 3s linear;
+}
+
+.arrows::after{
+    animation: arrow 3s linear infinite -1.5s;
+}
+
+@keyframes arrow{
+    0%{
+        opacity: 0;
+        transform: translate(0, -10px) rotate(-45deg);
+    } 10%,
+      90%{
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(-45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0, 10px) rotate(-45deg);
+    }
 }
