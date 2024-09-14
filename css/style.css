@@ -56,9 +56,10 @@ body{
     animation-timeline: scroll();
     animation-fill-mode: both;
     display: flex;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    animation-range: 0 500vh;
 }
 .top__layer--5{
     animation-name: top-layer-5;
@@ -110,12 +111,30 @@ body{
  }
 }
 
+@keyframes text{
+    to{
+      opacity: 1;
+  }
+  }
+
 .top__text{
     font-family: "Gravitas One", serif;
     position: relative;
     z-index: 1;
+    animation-name: text;
+    opacity: 0;
+    animation-timeline: scroll();
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-range: 150vh 350vh;
 }
 
 .title{
-    
+    text-transform: uppercase;
+    font-size: 80px;
+    font-weight: 400;
+}
+
+.text{
+    font-size: 24px;
 }
